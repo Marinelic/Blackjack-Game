@@ -66,16 +66,20 @@ let isAlive = true
 
 // 1. Declare a variable called message and assign its value to an empty string
 let message = ""
-
-if (sum <= 20) {
-    message = "Do you want to draw a new card? 🙂"   // 2. Reassign the message variable to the string we're logging out
     
-} else if (sum === 21) {
-    message = "Wohoo! You've got Blackjack! 🥳"      // 2. Reassign the message variable to the string we're logging out
-        hasBlackJack = true
-} else {
-    message = "You're out of the game! 😭"           // 2. Reassign the message variable to the string we're logging out
-        isAlive = false
-}
+    function startGame() {
+        if (sum <= 20) {
+        message = "Do you want to draw a new card? 🙂"   // 2. Reassign the message variable to the string we're logging out
+        
+        } else if (sum === 21) {
+        message = "Wohoo! You've got Blackjack! 🥳"      // 2. Reassign the message variable to the string we're logging out
+            hasBlackJack = true
+        } else {
+        message = "You're out of the game! 😭"           // 2. Reassign the message variable to the string we're logging out
+            isAlive = false
+        }
 
-console.log(message)
+            console.log(message)
+
+    }
+

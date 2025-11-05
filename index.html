@@ -11,31 +11,31 @@
         <div class="game-container">
             <h1>♠ Blackjack ♣</h1>
 
-            <div>
-                <div>
+            <div class="board">
+                <div id="dealer-hand" class="hand">
                     <h2>Dealer</h2>
 
-                    <div></div>
+                    <div id="dealer-cards" class="cards"></div>  <!-- This is an empty container where cards will appear. (from JS) -->
 
-                    <p>Score: 0</p>
+                    <p class="dealer-score">Score: 0</p>
                 </div>
 
-                <div>
+                <div id="player-hand" class="hand">
                     <h2>You</h2>
 
-                    <div></div>
+                    <div id="player-cards" class="cards"></div>    <!-- This is an empty container where cards will appear. (from JS) -->
 
-                    <p>Score: 0</p>
+                    <p class="player-score">Score: 0</p>
                 </div>
             </div>
 
-            <div>
-                <button>Start Game</button>
-                <button>Hit</button>
-                <button>Stand</button>
+            <div class="buttons">
+                <button id="btn-start" onclick="startGame()">START GAME</button>
+                <button id="btn-hit">HIT</button>
+                <button id="btn-stand">STAND</button>
             </div>
 
-            <p></p>
+            <p id="message"></p>
         </div>
 
         <script src="app.js"></script>
