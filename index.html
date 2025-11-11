@@ -10,40 +10,29 @@
 </head>
     <body>
         <div class="game-container">
-            <h1>♠ Blackjack ♣</h1>
+  <h1>♠ Blackjack ♣</h1>
+  <p id="message-el">Want to play a round?</p>
 
-            <p id="message-el">Want to play a round?</p>
+  <div class="board">
+    <div id="dealer-hand" class="hand">
+      <h2>Dealer</h2>
+      <div id="dealer-cards" class="cards"></div>
+      <p id="dealer-score">Score: 0</p>
+    </div>
 
-            <p id="cards-el">Cards:</p>
+    <div id="player-hand" class="hand">
+      <h2>You</h2>
+      <div id="player-cards" class="cards"></div>
+      <p id="player-score">Score: 0</p>
+    </div>
+  </div>
 
-            <p id="sum-el">Sum:</p>
+  <div class="buttons">
+    <button id="btn-start" onclick="startGame()">START GAME</button>
+    <button id="btn-hit" onclick="newCard()">HIT</button>
+  </div>
+</div>
 
-            <div class="board">
-                <div id="dealer-hand" class="hand">
-                    <h2>Dealer</h2>
-
-                    <div id="dealer-cards" class="cards"></div>         <!-- // This is an empty container where cards will appear. (from JS) -->
-
-                    <p class="dealer-score">Score: 0</p>
-                </div>
-
-                <div id="player-hand" class="hand">
-                    <h2>You</h2>
-
-                    <div id="player-cards" class="cards"></div>         <!-- // This is an empty container where cards will appear. (from JS) --> 
-
-                    <p class="player-score">Score: 0</p>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button id="btn-start" onclick="startGame()">START GAME</button>
-                <button id="btn-hit" onclick="newCard()">HIT</button>
-                <button id="btn-stand">STAND</button>
-            </div>
-
-            <p id="message"></p>
-        </div>
 
         <script src="app.js"></script>
     </body>
