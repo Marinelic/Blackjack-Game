@@ -1,3 +1,10 @@
+
+let player = {
+ name: "Leon",
+ chips: 150
+}
+
+
 let playerCards = []
 let playerSum = 0
 let dealerCards = []
@@ -12,6 +19,11 @@ let dealerCardsEl = document.getElementById("dealer-cards")
 let dealerScoreEl = document.getElementById("dealer-score")
 let playerCardsEl = document.getElementById("player-cards")
 let playerScoreEl = document.getElementById("player-score")
+let PlayerEl = document.getElementById("player-el")
+
+    PlayerEl.textContent = player.name + ": $" + player.chips 
+
+
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
