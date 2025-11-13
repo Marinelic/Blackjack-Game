@@ -1,9 +1,8 @@
 
 let player = {
- name: "Leon",
- chips: 150
+ name: "Per",
+ chips: Math.floor( Math.random() * 200 )
 }
-
 
 let playerCards = []
 let playerSum = 0
