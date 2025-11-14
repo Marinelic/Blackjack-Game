@@ -1,9 +1,4 @@
 
-let player = {
- name: "Per",
- chips: Math.floor( Math.random() * 200 )
-}
-
 let playerCards = []
 let playerSum = 0
 let dealerCards = []
@@ -20,70 +15,75 @@ let playerCardsEl = document.getElementById("player-cards")
 let playerScoreEl = document.getElementById("player-score")
 let PlayerEl = document.getElementById("player-el")
 
+let player = {
+ name: "Per",
+ chips: Math.floor( Math.random() * 200 )
+}
+
     PlayerEl.textContent = player.name + ": $" + player.chips 
 
 
 
-function getRandomCard() {
-    let randomNumber = Math.floor(Math.random() * 13) + 1
-    if (randomNumber > 10) {
-        return 10
-    } else if (randomNumber === 1) {
-        return 11
-    } else {
-        return randomNumber
-    }
-}
-
-function startGame() {
-    isAlive = true
-    hasBlackJack = false
-
-    // reset both hands
-    playerCards = []
-    dealerCards = []
-    playerSum = 0
-    dealerSum = 0
-
-    // player gets 2 cards
-    playerCards.push(getRandomCard(), getRandomCard())
-    playerSum = playerCards[0] + playerCards[1]
-
-    // dealer gets 1 card
-    dealerCards.push(getRandomCard())
-    dealerSum = dealerCards[0]
-
-    renderGame()
-}
-
-function renderGame() {
-    // Player UI
-    playerCardsEl.textContent = playerCards.join(" ")
-    playerScoreEl.textContent = "Score: " + playerSum
-
-    // Dealer UI
-    dealerCardsEl.textContent = dealerCards.join(" ")
-    dealerScoreEl.textContent = "Score: " + dealerSum
-
-    // Messages
-    if (playerSum < 21) {
-        message = "Do you want to draw a new card?"
-    } else if (playerSum === 21) {
-        message = "Blackjack!"
-        hasBlackJack = true
-    } else {
-        message = "You're out of the game!"
-        isAlive = false
+    function getRandomCard() {
+        let randomNumber = Math.floor(Math.random() * 13) + 1
+        if (randomNumber > 10) {
+            return 10
+        } else if (randomNumber === 1) {
+            return 11
+        } else {
+            return randomNumber
+        }
     }
 
-    messageEl.textContent = message
-}
+    function startGame() {
+        isAlive = true
+        hasBlackJack = false
 
-function newCard() {
-    if (isAlive && !hasBlackJack) {
-        let card = getRandomCard()
-        playerCards.push(card)
-        playerSum += card
+        // reset both hands
+        playerCards = []
+        dealerCards = []
+        playerSum = 0
+        dealerSum = 0
+
+        // player gets 2 cards
+        playerCards.push(getRandomCard(), getRandomCard())
+        playerSum = playerCards[0] + playerCards[1]
+
+        // dealer gets 1 card
+        dealerCards.push(getRandomCard())
+        dealerSum = dealerCards[0]
+
         renderGame()
     }
-}
+
+    function renderGame() {
+        // Player UI
+        playerCardsEl.textContent = playerCards.join(" ")
+        playerScoreEl.textContent = "Score: " + playerSum
+
+        // Dealer UI
+        dealerCardsEl.textContent = dealerCards.join(" ")
+        dealerScoreEl.textContent = "Score: " + dealerSum
+
+        // Messages
+        if (playerSum < 21) {
+            message = "Do you want to draw a new card?"
+        } else if (playerSum === 21) {
+            message = "Blackjack!"
+            hasBlackJack = true
+        } else {
+            message = "You're out of the game!"
+            isAlive = false
+        }
+
+        messageEl.textContent = message
+    }
+
+    function newCard() {
+        if (isAlive && !hasBlackJack) {
+            let card = getRandomCard()
+            playerCards.push(card)
+            playerSum += card
+            renderGame()
+        }
+    }
